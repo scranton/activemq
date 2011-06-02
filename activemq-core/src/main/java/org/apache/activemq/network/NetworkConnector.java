@@ -207,10 +207,27 @@ public abstract class NetworkConnector extends NetworkBridgeConfiguration implem
     }
 
     /**
-     * @return returns if this NetworkConnector is started.
+     *
+     * @return true if this NetworkConnector is started.
      */
     public boolean isStarted() {
         return serviceSupport.isStarted();
+    }
+
+    /**
+     *
+     * @return true if this NetworkConnector is in the process of stopping.
+     */
+    public boolean isStopping() {
+        return serviceSupport.isStopping();
+    }
+
+    /**
+     *
+     * @return true if this NetworkConnector is stopped.
+     */
+    public boolean isStopped() {
+        return serviceSupport.isStopped();
     }
 
     protected void handleStart() throws Exception {
