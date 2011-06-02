@@ -206,6 +206,13 @@ public abstract class NetworkConnector extends NetworkBridgeConfiguration implem
         serviceSupport.stop();
     }
 
+    /**
+     * @return returns if this NetworkConnector is started.
+     */
+    public boolean isStarted() {
+        return serviceSupport.isStarted();
+    }
+
     protected void handleStart() throws Exception {
         if (localURI == null) {
             throw new IllegalStateException("You must configure the 'localURI' property");
